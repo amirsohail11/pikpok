@@ -14,6 +14,7 @@ const config = {
   */
   databaseURL: process.env.DEVELOPMENT_URI,
   secret: process.env.JWT_SECRET,
+  tokenExpirenIn: process.env.JWT_EXPIRE_IN
 };
 
 module.exports = config;

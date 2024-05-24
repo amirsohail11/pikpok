@@ -21,6 +21,9 @@ module.exports = (mongoose) => {
           type: String,
           unique: true,
         },
+        password: {
+          type: String,
+        },
         mobile_number: {
           type: String,
           unique: true,
@@ -36,6 +39,11 @@ module.exports = (mongoose) => {
           type: Boolean,
           enum: [true, false],
           default: true,
+        },
+        is_deleted: {
+          type: Boolean,
+          enum: [true, false],
+          default: false,
         },
         device_type: {
           type: String,
