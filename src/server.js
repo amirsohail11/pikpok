@@ -5,7 +5,6 @@ const cors = require("cors");
 const config = require("./config/db.config.js");
 const router = express.Router();
 const logger = require("./util/logger.util.js");
-const dbbb= require("./models/index.js")
 
 app.get("/", (req, res) => {
   res.send("App started...");
@@ -18,6 +17,6 @@ app.use(cors({ allowedOrigins }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/api/v1", require("./route")(router));
+app.use("/api/v1", require("./route/api/v1")(router));
 
 express().use(app).listen(config.port, () => logger.info(`Listening on Port: ${config.port}`));
